@@ -114,13 +114,13 @@ M.keys = {
     },
     -- CLIPBOARD
     {
-        key = "y",
-        mods = "LEADER",
+        key = "C",
+        mods = "CTRL",
         action = wt.action.CopyTo(clipboard_location)
     },
     {
-        key = "p",
-        mods = "LEADER",
+        key = "V",
+        mods = "CTRL",
         action = wt.action.PasteFrom(clipboard_location)
     },
     -- OTHER
