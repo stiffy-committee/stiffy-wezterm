@@ -26,3 +26,11 @@ wt.on("update-right-status", function(window, pane)
 end)
 
 return cfg
+
+--  \~~- ~_
+--   ,---( /\
+--   / #~~ _ >>>
+--  /  \ /
+--
+--
+--  Stiffy
