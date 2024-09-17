@@ -1,4 +1,5 @@
 local wt = require("wezterm")
+local const = require("constants")
 local M = {}
 
 local clipboard_location = "Clipboard"
@@ -138,7 +139,12 @@ M.keys = {
         key = "L",
         mods = "CTRL",
         action = wt.action.ShowDebugOverlay
-    }
+    },
+    {
+        key = "b",
+        mods = "LEADER",
+        action = wt.action.EmitEvent(const.SWITCH_BACKGROUND)
+    },
 }
 
 M.mouse_bindings = {
