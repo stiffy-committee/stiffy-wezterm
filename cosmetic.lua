@@ -16,7 +16,7 @@ local default_bg = {
     },
     {
         source = {
-            File = utils.get_config_dir() .. "bg",
+            File = utils.get_config_dir() .. "bg.png",
         },
         hsb = {
             brightness = 0.3
@@ -27,17 +27,22 @@ local default_bg = {
         horizontal_align = "Center",
         height = "Contain",
         width = "Contain"
-
     },
 }
 
 M.font = wt.font("JetBrains Mono")
+M.color_scheme_dirs = {'colors'}
+-- M.color_scheme = "stiff"
 M.color_scheme = "ayu"
 M.background = default_bg
 
-local bg_state = 1
-wt.on(const.SWITCH_BACKGROUND, function(window, pane)
+local bg_state = 0
+local function get_bg(window, cycle)
     local overrides = window:get_config_overrides() or {}
+
+    if cycle then
+        bg_state = bg_state + 1
+    end
 
     if bg_state == 1 then
         overrides.background = {
@@ -49,12 +54,15 @@ wt.on(const.SWITCH_BACKGROUND, function(window, pane)
                 height = "100%",
             }
         }
-        bg_state = bg_state + 1
     else
         overrides.background = default_bg
-        bg_state = 1
+        bg_state = 0
     end
     window:set_config_overrides(overrides)
+end
+
+wt.on(const.SWITCH_BACKGROUND, function(window, pane)
+    get_bg(window, true)
 end)
 
 return M

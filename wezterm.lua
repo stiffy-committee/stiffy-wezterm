@@ -2,6 +2,8 @@ local wt = require("wezterm")
 local cfg = wt.config_builder()
 local utils = require("utils")
 
+cfg.prefer_to_spawn_tabs = true
+
 -- OS Specific setups
 if utils.is_windows() then
     local windows = require("windows")
