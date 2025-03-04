@@ -145,27 +145,24 @@ M.keys = {
         mods = "LEADER",
         action = wt.action.EmitEvent(const.SWITCH_BACKGROUND)
     },
+    {
+        key = "+",
+        mods = "CTRL",
+        action = wt.action.IncreaseFontSize
+    },
+    {
+        key = "-",
+        mods = "CTRL",
+        action = wt.action.DecreaseFontSize
+    },
+    {
+        key = ".",
+        mods = "CTRL",
+        action = wt.action.ResetFontSize
+    },
 }
 
 M.mouse_bindings = {
-    {
-        event = { Down = { streak = 1, button = "Right" } },
-        mods = "NONE",
-        action = wt.action_callback(function(window, pane)
-            local selected_text = window:get_selection_text_for_pane(pane)
-            if selected_text ~= "" then
-                window:perform_action(wt.action.CopyTo(clipboard_location), pane)
-                window:perform_action(wt.action.ClearSelection, pane)
-            else
-                window:perform_action(wt.action.PasteFrom(clipboard_location), pane)
-            end
-        end)
-    },
-    {
-        event = { Down = { streak = 1, button = "Left" } },
-        mods = "NONE",
-        action = wt.action.CompleteSelection(clipboard_location),
-    },
     {
         event = { Down = { streak = 1, button = "Left" } },
         mods = "CTRL",
