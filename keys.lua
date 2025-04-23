@@ -7,7 +7,7 @@ local clipboard_location = "Clipboard"
 M.leader = {
     key = "w",
     mods = "ALT",
-    timeout_milliseconds = 1000,
+    timeout_milliseconds = 10000,
 }
 
 M.keys = {

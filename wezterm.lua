@@ -3,6 +3,7 @@ local cfg = wt.config_builder()
 local utils = require("utils")
 
 cfg.prefer_to_spawn_tabs = true
+cfg.window_close_confirmation = "NeverPrompt"
 
 -- OS Specific setups
 if utils.is_windows() then
