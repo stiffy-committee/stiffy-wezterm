@@ -10,6 +10,7 @@ if utils.is_windows() then
     local windows = require("windows")
     cfg = utils.merge_tables(cfg, windows)
 end
+cfg.enable_wayland = false
 
 -- Keybinds
 local keys = require("keys")

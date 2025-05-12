@@ -6,6 +6,7 @@ local const = require("constants")
 local color_scheme = "Equilibrium Gray Dark (base16)"
 
 M.font = wt.font_with_fallback{
+    "Iosevka Curly",
     "ProggyClean CE Nerd Font",
     "JetBrains Mono"
 }
